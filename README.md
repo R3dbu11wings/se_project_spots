@@ -37,4 +37,7 @@ flexbox, fonts, backgrounds, media integration, and organizing the project using
   
 ![bessie](https://github.com/user-attachments/assets/6af31ea5-6948-42b8-8908-5c8544af98c6)
 <img width="1280" height="970" alt="cards" src="https://github.com/user-attachments/assets/da27fabc-f0cc-455f-9328-bf492677dd4d" />
->>>>>>> d3a8bf90425b38ace448babf2872049de7fe87b8
+
+**Video**
+
+https://drive.google.com/file/d/1F79wGcXHKGW_2xCHl4CoR_0zcP7TVyeq/view?usp=sharing
