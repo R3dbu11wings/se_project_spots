@@ -23,7 +23,9 @@
   line-height: 1;
   margin: 0 0 12px;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   max-width: 420px;
 }
@@ -35,6 +37,9 @@
   font-size: 16px;
   line-height: 1;
   opacity: 70%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .profile__edit-btn {
@@ -48,7 +53,7 @@
   gap: 8px;
   opacity: 70%;
   color: #212121;
-  background-color: #fcf5e5;
+  background-color: transparent;
 }
 
 .profile__edit-btn:hover {

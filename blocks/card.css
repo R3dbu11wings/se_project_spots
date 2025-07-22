@@ -2,7 +2,6 @@
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 .card__image {
@@ -22,7 +21,6 @@
 .card__title {
   margin: 12px 0 0;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
-  display: flex;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -44,7 +42,6 @@
 }
 
 .card__like-btn:hover {
-  color: #212121;
   opacity: 100%;
   cursor: pointer;
 }
