@@ -69,7 +69,7 @@
   height: 16px;
 }
 
-.profile__add-btn {
+.profile__new-post-btn {
   margin-left: auto;
   border-radius: 8px;
   color: #fcf5e5;
@@ -84,6 +84,7 @@
   gap: 8px;
   padding: 0;
   border: none;
+  cursor: pointer;
 }
 
 .profile__add-btn:hover {
@@ -128,7 +129,7 @@
     justify-content: center;
   }
 
-  .profile__add-btn {
+  .profile__new-post-btn {
     margin: 0;
     width: 100%;
   }
