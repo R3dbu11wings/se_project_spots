@@ -10,10 +10,14 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
 .modal_is-opened {
   visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .modal__container {
@@ -36,6 +40,12 @@
   background-color: #fff;
   border: none;
   opacity: 40%;
+  cursor: pointer;
+}
+
+.modal__close-btn:hover {
+  cursor: pointer;
+  opacity: 100%;
 }
 
 .modal__title {
@@ -86,6 +96,7 @@
   color: #fcf5e5;
   border-radius: 8px;
   padding: 0;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
