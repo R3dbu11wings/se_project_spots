@@ -35,7 +35,7 @@
   right: 50px;
   width: 40px;
   height: 40px;
-  background-image: url(../images/close\ icon.svg);
+  background-image: url(../images/closing_icon.svg);
   padding: 0;
   background-color: #fff;
   border: none;
@@ -55,6 +55,7 @@
   color: #212121;
   max-width: 169px;
   width: 100%;
+  margin: 0 0 32px;
 }
 
 .modal__form {
@@ -68,20 +69,29 @@
   font-size: 16px;
   line-height: 1.1;
   color: #212121b2;
+  font-weight: 500;
 }
 
 .modal__input {
   display: block;
   margin: 8px 0 0;
   width: 100%;
-  padding: 16px 0;
+  padding: 16px 0 16px 12px;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 1;
   font-weight: 500;
-  color: #2121214d;
+  color: #212121;
+  opacity: 40%;
   border-radius: 8px;
   border-color: #21212166;
+  border-width: 1px;
+  cursor: pointer;
+}
+
+.modal__input:hover {
+  opacity: 100%;
+  cursor: pointer;
 }
 
 .modal__input::placeholder {
@@ -89,13 +99,24 @@
 }
 
 .modal__submit-btn {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   max-width: 156px;
   width: 100%;
   height: 52px;
   background-color: #212121;
   color: #fcf5e5;
   border-radius: 8px;
+  border: none;
   padding: 0;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+  opacity: 100%;
+}
+
+.modal__submit-btn:hover {
+  opacity: 80%;
   cursor: pointer;
 }
 
@@ -107,6 +128,10 @@
 
   .modal__label {
     margin: 0 0 24px;
+  }
+
+  .modal__input {
+    font-size: 16px;
   }
 
   .modal__container {
