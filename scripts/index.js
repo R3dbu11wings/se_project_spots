@@ -50,7 +50,6 @@ function handleEditProfileSubmit(evt) {
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
   closeModal(editProfileModal);
-  evt.target.reset();
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
