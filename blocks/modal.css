@@ -14,7 +14,7 @@
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
-.modal__type_preview {
+.modal_type_preview {
   padding: 0 16px;
 }
 
@@ -31,6 +31,7 @@
   background-color: #fff;
   padding: 32px 50px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .modal__close-btn {
@@ -92,6 +93,7 @@
   border-color: #21212166;
   border-width: 1px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .modal__input:hover {
@@ -138,27 +140,29 @@
   border-radius: 8px;
 }
 
-.modal__preview_close-btn {
+.modal__close-btn_type_preview {
   top: 0;
   right: -52.5px;
   background-image: url(../images/white_close.svg);
   opacity: 1;
 }
 
-.modal__preview_close-btn:hover {
+.modal__close-btn_type_preview:hover {
   opacity: 40%;
 }
 
 .modal__caption {
-  width: 198px;
-  height: 29px;
-  font-family: "Poppins";
+  border-radius: 8px;
   font-weight: 500;
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 24px;
   color: #ffffff;
   background-color: #212121;
-  margin: 8px 0 0;
+  margin: 0;
+  padding: 4px 8px;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
 }
 
 @media screen and (max-width: 627px) {
@@ -184,7 +188,7 @@
     right: 12px;
   }
 
-  .modal__preview_close-btn {
+  .modal__close-btn_type_preview {
     top: -48px;
     right: 0;
   }
@@ -199,8 +203,6 @@
   }
 
   .modal__caption {
-    width: 159px;
-    height: 19px;
     font-size: 16px;
   }
 }
