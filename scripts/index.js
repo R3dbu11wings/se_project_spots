@@ -94,24 +94,22 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
-const handleEscClose = () => {
-  const openModal = document.querySelector(".modal_is-opened");
-  if (openModal) {
-    closeModal(openModal);
-  }
-};
-
-document.addEventListener("keydown", (evt) => {
+function handleEscClose(evt) {
   if (evt.key === "Escape") {
-    handleEscClose();
+    const modal = document.querySelector(".modal_is-opened");
+    if (modal) {
+      closeModal(modal);
+    }
   }
-});
+}
 
 const handleClickClose = () => {
   const openModal = document.querySelector(".modal_is-opened");
@@ -135,7 +133,7 @@ editProfileBtn.addEventListener("click", () => {
     editProfileNameInput,
     editProfileDescriptionInput,
   ]);
-  openModal(editProfileModal);
+  openModal(editProfileModal, settings);
 });
 
 editProfileCloseBtn.addEventListener("click", () => {
