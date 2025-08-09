@@ -70,12 +70,13 @@
 }
 
 .modal__label {
-  margin: 0 0 32px;
+  margin-bottom: 32px;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.1;
   color: #212121b2;
   font-weight: 500;
+  display: block;
 }
 
 .modal__input {
@@ -96,6 +97,11 @@
   box-sizing: border-box;
 }
 
+.modal__input_type_error {
+  border: 1px solid #ff0000;
+  opacity: 60%;
+}
+
 .modal__input:hover {
   opacity: 100%;
   cursor: pointer;
@@ -103,6 +109,18 @@
 
 .modal__input::placeholder {
   color: #2121214d;
+}
+
+.modal__error {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 500;
+  height: 18px;
+  display: block;
+  margin-top: 8px;
+  color: #ff0000;
+  opacity: 70%;
 }
 
 .modal__submit-btn {
@@ -125,6 +143,10 @@
 .modal__submit-btn:hover {
   opacity: 80%;
   cursor: pointer;
+}
+
+.modal__submit-btn_disable {
+  opacity: 50%;
 }
 
 .modal__image-container {

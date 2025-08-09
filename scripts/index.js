@@ -43,6 +43,7 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
 const newPostBtn = document.querySelector(".profile__new-post-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostForm = newPostModal.querySelector("#new-post-form");
+const newPostSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostImageInput = newPostModal.querySelector("#post-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#post-caption-input");
@@ -99,10 +100,42 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
+const handleEscClose = () => {
+  const openModal = document.querySelector(".modal_is-opened");
+  if (openModal) {
+    closeModal(openModal);
+  }
+};
+
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    handleEscClose();
+  }
+});
+
+const handleClickClose = () => {
+  const openModal = document.querySelector(".modal_is-opened");
+  if (openModal) {
+    closeModal(openModal);
+  }
+};
+
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
+
 editProfileBtn.addEventListener("click", () => {
-  openModal(editProfileModal);
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  resetValidation(editProfileForm, [
+    editProfileNameInput,
+    editProfileDescriptionInput,
+  ]);
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", () => {
@@ -140,9 +173,9 @@ function handleAddCardSubmit(evt) {
 
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-
   closeModal(newPostModal);
   evt.target.reset();
+  disableButton(newPostSubmitBtn, settings);
 }
 
 newPostForm.addEventListener("submit", handleAddCardSubmit);
