@@ -111,13 +111,6 @@ function handleEscClose(evt) {
   }
 }
 
-const handleClickClose = () => {
-  const openModal = document.querySelector(".modal_is-opened");
-  if (openModal) {
-    closeModal(openModal);
-  }
-};
-
 document.querySelectorAll(".modal").forEach((modal) => {
   modal.addEventListener("mousedown", (evt) => {
     if (evt.target === modal) {
