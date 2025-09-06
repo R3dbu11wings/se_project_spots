@@ -6,6 +6,7 @@ import {
 } from "../scripts/validation.js";
 import { setButtonText, setDeleteText } from "../utils/helpers.js";
 import Api from "../utils/Api.js";
+import { disableButton } from "../scripts/validation.js";
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
@@ -77,6 +78,7 @@ api
     });
     profileNameEl.textContent = users.name;
     profileDescriptionEl.textContent = users.about;
+    avatarEl.src = users.avatar;
   })
   .catch(console.error);
 
@@ -89,6 +91,10 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
+
+  if (data.isLiked) {
+    cardLikeBtn.classList.add("card__like-btn_active");
+  }
 
   cardLikeBtn.addEventListener("click", (evt) => handleLike(evt, data._id));
 
@@ -255,6 +261,7 @@ function handleAvatarSubmit(evt) {
       avatarEl.src = data.avatar;
       closeModal(avatarModal);
       evt.target.reset();
+      disableButton(submitBtn, settings);
     })
     .catch(console.error)
     .finally(() => {
