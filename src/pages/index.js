@@ -49,6 +49,7 @@ const avatarEl = document.querySelector(".profile__avatar");
 const deleteModal = document.querySelector("#delete-modal");
 const deleteForm = deleteModal.querySelector(".modal__form");
 const deleteCloseBtn = deleteModal.querySelector(".modal__close-btn");
+const deleteCancelBtn = deleteModal.querySelector(".modal__submit-btn-cancel");
 
 // preview popup image elements
 const previewModal = document.querySelector("#preview-modal");
@@ -203,6 +204,10 @@ deleteCloseBtn.addEventListener("click", () => {
   closeModal(deleteModal);
 });
 
+deleteCancelBtn.addEventListener("click", () => {
+  closeModal(deleteModal);
+});
+
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
 
@@ -217,6 +222,7 @@ function handleEditProfileSubmit(evt) {
     .then((data) => {
       profileNameEl.textContent = data.name;
       profileDescriptionEl.textContent = data.about;
+      disableButton(submitBtn, settings);
       closeModal(editProfileModal);
     })
     .catch(console.error)
